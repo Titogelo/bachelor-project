@@ -1,0 +1,121 @@
+	/*
+#equipo1 .title{ 
+		font-size:24px; 
+		color:#fff; 
+		margin:auto -76%;
+	}
+	
+#equipo2 .title{ 
+	font-size:24px; 
+	color:#fff; 
+	margin:auto -38%;
+	}
+	
+#equipo1 .puntos, #equipo2 .puntos{ font-size:14px; color:#DDDDDD; position:relative; top:25px;}
+#equipo1 .divpos, #equipo2 .divpos{ font-size:11px; color:#ddd; margin:-3px 6px }
+#equipo1 .posliga, #equipo1 .pos, #equipo1 .divpos, #equipo2 span .title, #sep, .e1, .datos, .e2 .nograph { float:left }
+#equipo2 .posliga, #equipo2 .pos, #equipo2 .divpos, #equipo1 span .title, .e2, .e1 .nograph{ float:right }
+, #equipo1 .posliga, #equipo2 .posliga, .tituloEstadisticas, .est .item , .estd .item { clear:both }
+.divpos .pos, .divpos strong, .peorpos, .mejorpos, .tituloEstadisticas, .graph .bar{ display:block }
+
+.divpos .pos { background:url(../img/fondo-puesto.gif) repeat scroll 0 0 transparent; font-size:22px; font-weight:bold; height:26px; margin:0 4px; padding:4px; text-align:center; width:27px; }*/
+
+#equipos{
+	background:transparent url(../images/fnd-comparar.gif) repeat scroll 0 0;
+	color:white;
+	height:139px;
+	overflow:hidden;
+	}
+#equipo1{
+	float:left;
+}
+#equipo2{
+	float:right;
+}
+
+#equipo2 > .divpos > strong {
+	text-align:right;
+}
+
+#equipo1 > .divpos > .peorpos, #equipo1 > .divpos > .mejorpos, #equipo1 > .divpos > .title {
+	text-align:right;
+}
+
+#equipo1, #equipo2{ 
+		height:59px;
+		padding:0px 5px;
+		width:23em;
+	}
+
+#equipo1 .title { 
+		float:left;
+		font-size:18px;
+		left:1em;
+		position:relative;
+		top:0.7em;
+	}
+	
+#equipo2 .title { 
+		font-size:18px;
+		position:relative;
+		right:1em;
+		top:0.7em;
+	}
+
+#equipo1 .puntos { 
+		position:relative;
+		top:3.5em;
+	}
+#equipo2 .puntos { 
+		float:left;
+		position:relative;
+		top:3.5em;
+	}
+
+#equipo1 .posliga, #equipo1 .pos, #equipo1 .divpos { float:left }
+#equipo2 .posliga, #equipo2 .pos, #equipo2 .divpos { float:right }
+
+.divpos .pos { 	background:url(../images/fondo-puesto.gif) repeat scroll 0 0 transparent;
+		font-size:22px; 
+		font-weight:bold; 
+		height:26px; 
+		margin:0 4px; 
+		padding:4px; 
+		text-align:center; 
+		width:27px;
+	}
+
+#sep{
+	background:transparent url(../images/comp-roto.gif) repeat-y scroll right 0;
+	height:139px;
+	overflow:visible;
+	width:27px;
+}
+
+.e1, .e2 .nograph, .datos, #sep, #equipo1, #equipo2 { float:left }
+.e2, .e1 .nograph { float:right }
+
+.cleaner, .tituloEstadisticas, .est .item , .estd .item { clear:both }
+.divpos .pos, .divpos strong, .peorpos, .mejorpos, .tituloEstadisticas, .graph .bar{ display:block }
+
+#equipo2 .pos{ color:#4f8cd0; float:right; clear:both; }
+#equipo1 .pos{ color:#71C645 }
+
+#estadisticas  { border:1px solid #DDDDDD;  margin:10px 0; overflow:hidden; padding:0 5px 5px; }
+	.tituloEstadisticas{ background:#DDDDDD; color:#222222; font-size:14px; font-weight:bold; margin:15px 0 10px; padding:2px; text-align:center; }
+	.e1 {text-align:left}
+	.e2 {text-align:right}
+	.datos {font-size:14px;text-align:center;}
+#estadisticas .est {width:33%;}
+#estadisticas .estd {width:34%;}
+.est .item { background:none repeat scroll 0 0 #CFCDD3; font-size:12px; margin:6px 6px 0; overflow:hidden; padding:0 0; }
+.estd .ditem { font-size:13px; padding:3px 0; }
+
+.graph .bar { background:url("../images/fnd-c2.gif") repeat scroll 0 0 #71ACEA; color:#002E5E; float:left; height:20px; min-width:3em; padding-left:5px; position:relative; text-align:left; }
+.e1 .graph .bar { background:url(../images/fnd-c1.gif) repeat scroll 0 0 #82CD5B; 	color:#143A00; float:right; min-width:3em; padding-right:5px; text-align:right; }
+
+.graficas { margin:auto 11em; }
+
+#grafica_evolucion {  text-align:center; }
+#grafica_evolucion .color_equipo1 { color:#BBE46A; }
+#grafica_evolucion .color_equipo2 { color:#75B6FF; }

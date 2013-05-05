@@ -1,0 +1,159 @@
+	:link,:visited { text-decoration:none } 
+	:focus,:active { outline: 0 } 
+	ul,ol { list-style:none } 
+	h1,h2,h3,h4,h5,h6,pre,code { font-size:1em; } 
+	ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,label,input { margin:0; padding:0; } 
+	a img,:link img,:visited img, fieldset { border:none; left:0px; position:relative; top:0px } 
+	address { font-style:normal }
+	form { }
+	label { margin-left:2px; color:#EFF8FD; }
+	input { margin-left:11px; text-align:center; vertical-align:middle; }
+	body { font: .8em "Trebuchet MS", Verdana, Helvetica, sans-serif; color: #666;  background: #F7FCFF url(../img/bg.gif) repeat-x; }
+	a { color: #AF1515; cursor: pointer; }
+	a:hover { color: #7D1919; }
+	h1 { font-size: 1.3em; clear: both; margin: 0; }
+	h2 { font: normal 1.2em georgia; color: #3D3C3B;  }
+	h3 { font: normal 1em georgia; color: #3D3C3B;  }
+	h2#slogan { font-size: 1.3em; color: #808080; }
+	p  { margin: 0 0 15px; line-height: 1.7em; }
+	.clear { clear: both; }
+	.wrap { margin: 0 auto; width: 900px; }
+	.background { background: url(../img/bg.jpg) no-repeat left 42px; min-height:500px; }
+
+/***** Cuerpo Central (left) *****/
+
+			
+	#left { float: left; width: 99%; margin: 0 0 10px; text-align: justify; }
+			#left .verMas { display:none; }
+			
+			.modiPublicacion { float:right; position:relative; top:-23px; right:8px;}
+			.delePublicacion { float:right; position:relative; top:-23px; }  
+			
+			.borradoOk { background:none repeat scroll 0 0 #EFF8FD;  color:blue; float:right; padding:10px; position:relative; }		
+			.borradoOk  .No{ background:none repeat scroll 0 0 #EFF8FD;  color:red; float:right; padding:10px; position:relative; }		
+			
+			#botonera { overflow:auto; padding:31px;}
+			#botonera  #nuevo{ float:right; position:relative; right:23px; top:0px; }
+			
+		.subtitle { font-weight: bold; font-style: italic; font-size: 1.1em; margin: 0 0 4px; } 
+		.fecha { background: #fff; padding: 5px 0; border-right: 1px solid #D3EAFA; border-bottom: 1px solid #D3EAFA; color: #ccc; float: left; width: 55px; margin: 7px 12px 5px 0; text-align: center; }
+		.fecha span { font-size: 1.6em; }
+			/*#noticiaNew{ width:525px; -moz-border-radius-topleft:20px;  padding:20px; background:#EFF8FD; border-bottom:1px solid #D3EAFA; border-right:1px solid #D3EAFA; margin:10px;}*/
+
+			.comentario { clear:both; margin:15px; padding:0 0 0 80px; position:relative; overflow:hidden; border:1px solid #CCCCCC;}
+			.comentario form textarea { display:block;height:60px;width:99%; font-family:Lucida Grande; }
+			.comentario .enviaBoton { color:#FFFFFF;font-size:11px;float:right; background:url('http://cdn.last.fm/flatness/buttons/5/confirm_button.png') repeat-x scroll 0 0 #515151; border-color:#505050 #404040 #2D2D2D;font-weight:bold; /*text-shadow:0 -1px 1px #515151;*/ }
+			.comentario .autor{ background:#111111;  display:block; font-size:11px; font-weight:normal; line-height:1.5em; padding:0 5px 2px 0; }
+			.comentario span.userImage { display:inline; float:left; margin-left:-80px;  position:relative; }
+			.comentario .meta { font-size:10px; position:absolute;   right:17px; text-align:right; top:0;} 
+	
+			.comentario .primero {  }
+			
+			/*#noticiaOld{ width:525px; padding:20px; background:#EFF8FD; border-bottom:1px solid #D3EAFA; border-right:1px solid #D3EAFA; margin:10px; }
+			//#noticiasViejas{ display:none; }
+			//#nuevaNew { color:white; }*/
+			
+			#formulario { margin:auto 6%; clear:both;}
+				#formulario  ul , #formulario  fieldset { float:left; }
+				#formulario  fieldset { border:1px solid; margin-right:2px; padding:7px; }
+				#formulario  label, #buscar label , #tabla label { color:black; }	
+				#formulario  select { margin-left: 11px; width:146px;}
+				#formulario  textarea{ font-family:Lucida Grande; width:100%; height:140px; }
+				#formulario input:focus{ background:#EEEEEE;}
+					#formulario .col1 label { width:70px; float:left; }
+					#formulario .col2 label { width:101px; float:left;  }
+					#formulario .col3 label { width:105px; float:left;  }
+				#formulario .botonesForm { margin:20px; clear:both; padding-right:15px; }
+				
+				
+				#combo1 { margin: 20px;}
+				
+				
+			#tabla { clear:both; margin:auto -1%;}
+				a.ok{ background:url(../img/comparar-equipos.gif) repeat scroll 0 -32px transparent; display:block; float:right; height:32px; text-indent:-10000px; width:121px; position:relative; left:17px; margin-top:5px;}
+				a.okdes{ background:url(../img/comparar-equipos.gif) repeat scroll 0 0px transparent;}
+				span.aviso{ -moz-border-radius:5px; display:block; float:right; bottom:6px; position:relative; color:white; padding:4px;}
+				#nuevaBusqueda a{ -moz-border-radius:5px; background:#EFF8FD; border:1px solid #A49D81; padding:5px;}
+				
+				
+				#buscar { margin:0px; font-family:georgia; float:left; }
+				#buscar input:focus{ background:#EAE7D6; }
+				
+				#clasifica { border:1px solid; border-collapse:collapse; margin:0px; text-align:center; border-collapse:collapse; border-spacing:0; width:98%;}
+					#clasifica input.opciones{ left:-5px; position:relative; top:0px }
+					
+				#jugadores { border-collapse:collapse; margin:auto; text-align:center; width:850px;}
+					
+				#quiniela{ border-collapse:collapse; margin:30px auto; text-align:center; width:850px; }
+					
+	.contentPlus{ background:none repeat scroll 0 0 #FFFFFF; border:1px solid #CCCCCC; clear:both; margin:2px -3px; padding:5px;	
+				min-height:500px; overflow:hidden; position:relative; }
+	
+	.contentPlus .botonesForm{ float:left; }
+	
+	
+	.encabezadoPagina { text-align:center; font-size:20px; font-family:Georgia; margin:10px; }
+
+	
+	.mod_info, .mod_info_la_mas_ancho, .mod_info_mas_ancho { background:#FFFFFF none repeat scroll 0 0; margin:0 0 11px; padding:5px 4px; 
+						float:left; width:290px; }
+	.mod_info .escudo { display:inline; float:left; margin:-9px 8px 0 0; } 
+	.mod_info h2, .mod_info_mas_ancho h2, .mod_info_la_mas_ancho h2  { color:#000000; font-family:Arial,Helvetica,sans-serif; font-size:280%; 
+						  font-style:normal; font-variant:normal; font-weight:bold; 
+						line-height:100%; padding:15px 0 0; }
+	.mod_info h3 , .mod_info_mas_ancho h3, .mod_info_la_mas_ancho h3 { color:#FFFFFF; font-family:Arial,Helvetica,sans-serif; font-size:140%; 
+						  font-style:normal; font-variant:normal; font-weight:bold; line-height:100%; }
+						
+	.mod_info .plantilla { background:#000000 none repeat scroll 0 0; clear:both; margin:9px 0 0; position:relative; height:350px; }
+	.mod_info .plantilla h3 { background:#7D7D7D url(../img/equipos/f_t_plantilla.jpg) no-repeat scroll center top; padding:10px 10px 6px;
+						margin-top:-8px; }
+	.mod_info .plantilla p { font-family:Tahoma,Arial,Helvetica,sans-serif; font-size:90%;  
+						font-style:normal; font-variant:normal; font-weight:bold;line-height:100%; position:absolute; right:7px; top:12px; }
+	.mod_info .plantilla p { color:#FFFFFF; font-weight:normal; }
+	.mod_info .plantilla p a { color:#FFFFFF; font-weight:bold; text-decoration:underline; }
+	.mod_info .plantilla li {  border-top:1px solid #505050; clear:both; color:#EFAA35; font-family:Tahoma,Arial,Helvetica,sans-serif; 
+						font-size:90%;   font-style:normal; font-variant:normal; font-weight:bold;
+						line-height:100%; margin:0 7px 0 11px; padding:6px 0; }
+	.mod_info .plantilla li.ult { border-bottom:0 none; }
+	.mod_info .plantilla li ul { padding:2px 0; }
+	.mod_info .plantilla li li { border:0 none; clear:none; color:#C7C7C7; display:inline; float:left; font-family:Arial,Helvetica,sans-serif;
+						font-size:120%;   font-style:normal; font-variant:normal;font-weight:normal;
+						line-height:120%; margin:3px; padding:0; width:auto; }
+	.mod_info .plantilla li li a { color:#C7C7C7; text-decoration:underline;}
+
+	.mod_info .datos_club, .mod_info_mas_ancho .situacion_club, .mod_info_la_mas_ancho .situacion_club { 
+						background:#000000 url(../img/f_datos_club.jpg) repeat-x scroll 0 0; font-family:Arial,Helvetica,sans-serif;
+						font-size:110%;   font-style:normal; font-variant:normal; font-weight:normal;
+						line-height:120%; padding:0 10px 13px; overflow:hidden; margin-bottom:3px;}
+	.mod_info .datos_club h3, .mod_info_mas_ancho .situacion_club h3 , .mod_info_la_mas_ancho .situacion_club h3  { margin:0 0 0px; padding:5px 0 7px; }
+	.mod_info .datos_club img, .mod_info_mas_ancho .situacion_club img, .mod_info_mas_ancho .situacion_club img { float:left; margin:8px; width:100px; 
+						border:1px solid #FFFFFF;}
+	.mod_info .datos_club li, .mod_info .datos_club p, .mod_info_mas_ancho .situacion_club li, .mod_info_mas_ancho .situacion_club p, 
+	.mod_info_la_mas_ancho .situacion_club li, .mod_info_la_mas_ancho .situacion_club p { color:#D1D1D1; margin:5px 0;}
+	.mod_info .datos_club li span, .mod_info_mas_ancho .situacion_club li span, .mod_info_la_mas_ancho .situacion_club li span   { color:#EFAA35; float:left; left:8px; position:relative; top:7px; }
+	.mod_info .datos_club li a, .mod_info_mas_ancho .situacion_club li a, .mod_info_la_mas_ancho .situacion_club li a { color:#D1D1D1;
+						text-decoration:underline;}
+	.mod_info_la_mas_ancho .situacion_club .numberComent { left:-46px; position:relative; top:60px; }
+	.mod_info_la_mas_ancho .situacion_club .date { top:0px; }
+
+
+	.mod_info_mas_ancho { margin:auto 15%; width:600px; }
+
+	.mod_info_la_mas_ancho { margin:auto 2%; width:95%; font-family:Georgia; }
+	.mod_info_la_mas_ancho .aviso{ color:red; font-size:18px; }
+	.mod_info_la_mas_ancho h4{ margin:5px; font-size:15px; }
+	.mod_info_la_mas_ancho .situacion_club p { font-family:Georgia; font-size:15px; margin-bottom:15px; border:2px solid #000;}
+	.mod_info_la_mas_ancho .situacion_club h3:first-letter { font-size:20px; }
+	.mod_info_la_mas_ancho .situacion_club .LetraCapital { font-size:xx-large; }
+	.mod_info_la_mas_ancho .situacion_club .Mostrar { display:block; }
+	.mod_info_la_mas_ancho .situacion_club .Ocultar { display:none; }
+	.mod_info_la_mas_ancho .situacion_club .LeerMas { font-family:Lucida Calligraphy; font-size:13px; margin:10px; }
+	.mod_info_la_mas_ancho .situacion_club .SeguirLeyendo { display:none; }
+
+	.mod_info_la_mas_ancho .situacion_club blockquote { text-indent: 25px; background: url(../img/quotes1.png);background-position: 0 2px; background-repeat: no-repeat; color:#D1D1D1; font-family:Tahoma; font-style:oblique; margin:20px 0;padding-right:15px; }
+	.mod_info_la_mas_ancho .situacion_club blockquote p { display: inline; margin: 0; padding-right: 27px;  background: url(../img/quotes2.png); background-position: bottom right; background-repeat: no-repeat; }
+	#ZonaOculta { }
+
+/****   Zonas ocultas para la impresion ****/
+
+	#pie, #side, #menu { display:none; }

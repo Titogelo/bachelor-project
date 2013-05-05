@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd" >
+<xliff version="1.0">
+  <file original="global" source-language="en" datatype="plaintext">
+    <header />
+    <body>
+      <!-- Actions -->
+      <trans-unit>
+        <source>Details</source>
+        <target>Details</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Archive/reactivate</source>
+        <target>Archivieren/Reaktivieren</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Back to list</source>
+        <target>Zurück zur Liste</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Are you sure?</source>
+        <target>Sind Sie sich sicher?</target>
+      </trans-unit>
+      <!-- Filters -->
+      
+      <!-- List -->
+      <trans-unit>
+        <source>[0] no result|[1] 1 result|(1,+Inf] %1% results</source>
+        <target>[0] kein Ergebnis|[1] 1 Ergebnis|(1,+Inf] %1% Ergebnisse</target>
+      </trans-unit>
+      <trans-unit>
+        <source>sort ascending</source>
+        <target>aufsteigend sortieren</target>
+      </trans-unit>
+      <trans-unit>
+        <source>sort descending</source>
+        <target>absteigend sortieren</target>
+      </trans-unit>
+      <trans-unit>
+        <source>sorted ascending</source>
+        <target>aufsteigend sortiert</target>
+      </trans-unit>
+      <trans-unit>
+        <source>sorted descending</source>
+        <target>absteigend sortiert</target>
+      </trans-unit>
+      <!-- Pagination -->
+      
+      <!-- Form -->
+      <trans-unit>
+        <source>The item was created successfully.</source>
+        <target>Das Objekt wurde erfolgreich erstellt.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The item was updated successfully.</source>
+        <target>Das Objekt wurde erfolgreich aktualisiert.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The item was created successfully. You can add another one below.</source>
+        <target>Das Objekt wurde erfolgreich erstellt. Weitere können unten erstellt werden.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The item was updated successfully. You can add another one below.</source>
+        <target>Das Objekt wurde erfolgreich aktualisiert. Weitere können unten erstellt werden.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The item has not been saved due to some errors.</source>
+        <target>Das Objekt konnte wegen Fehlern nicht gespeichert werden.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The item was deleted successfully.</source>
+        <target>Das Objekt wurde erfolgreich gelöscht.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

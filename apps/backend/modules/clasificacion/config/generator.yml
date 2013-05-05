@@ -1,0 +1,24 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           clasificacion
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          clasificacion
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+           title: Listado de clasificaciones
+           display: [idJornada, =nombre_equipo, puntos]
+      filter:  ~
+      form: ~
+      edit:
+        title: Modificando los datos de clasificación de "%%nombre_equipo%%"
+      new:     ~

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<xliff version="1.0">
+  <file source-language="EN" target-language="de" datatype="plaintext" original="messages" date="2009-08-15T13:24:22Z" product-name="messages">
+    <body>
+      <trans-unit>
+        <source>The item has not been saved due to some errors.</source>
+        <target>Das Objekt wurde wegen Fehlern nicht gespeichert.</target>
+      </trans-unit>
+      
+      <trans-unit>
+        <source>Archive</source>
+        <target>Archivieren</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Reactivate</source>
+        <target>Reaktivieren</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit</source>
+        <target>Bearbeiten</target>
+      </trans-unit>
+      
+      <trans-unit>
+        <source>yes or no</source>
+        <target>ja oder nein</target>
+      </trans-unit>
+      <trans-unit>
+        <source>yes</source>
+        <target>ja</target>
+      </trans-unit>
+      <trans-unit>
+        <source>no</source>
+        <target>nein</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

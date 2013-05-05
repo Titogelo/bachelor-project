@@ -1,0 +1,192 @@
+	@import url("barraLogin.css"); 
+	@import url("prettyPhoto.css"); 
+	@import url("formularios.css");
+	@import url("cronicas.css");
+	@import url("styleDatosEquipo.css");
+	@import url("styleCompara.css");
+	@import url("errores.css");
+	@import url("noticias.css");
+	@import url("usuarios.css");
+	@import url("cargo.css");
+	@import url("quiniela.css");
+	@import url("jugadores.css");
+	@import url("lecciones.css");
+	@import url("clasificacion.css");
+	@import url("eventos.css");
+	@import url("deportivo.css");
+	@import url("mensaje_carga.css");
+	@import url("botones.css");
+	@import url("central_de_datos.css");
+	@import url("jquery.ui.dialog.css");
+		
+	:link,:visited { text-decoration:none } 
+	:focus,:active { outline: 0 } 
+	ul,ol { list-style:none } 
+	h1,h2,h3,h4,h5,h6,pre,code { font-size:1em; } 
+	ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,label,input { margin:0; padding:0; } 
+	fieldset { border:1px solid black; margin-right:3px; }
+	legend { color:red; }
+	a img,:link img,:visited img { border:none; left:0px; position:relative; top:0px } 
+	address { font-style:normal }
+	font{ color:white; }
+	label { margin-left:2px; color:black; }
+	input, select { margin-left:11px; text-align:center; vertical-align:middle; }
+	body { font: .8em "Trebuchet MS", Verdana, Helvetica, sans-serif; color: #666;  background: #F7FCFF url(../img/bg.gif) repeat-x; }
+	a { color: #AF1515; cursor: pointer; }
+
+	h1 { font-size: 1.3em; clear: both; margin: 0; }
+	h2 { font: oblique 1.2em georgia; color: #3D3C3B; text-align:center; text-decoration:underline; margin-top:2em; }
+	h3 { font: normal 1em georgia; color: #3D3C3B;  }
+	h2#slogan { font-size: 1.3em; color: #808080; margin:0 1em; }
+	p  { margin: 0 0 15px; line-height: 1.7em; }
+	.clear { clear: both; }
+	.cuerpo, #cabecera, .cuerpo_pie { margin: 0 auto; width: 900px; }
+	.background { /*background: url(../img/bg.jpg) no-repeat left 42px;*/ min-height:500px; }
+
+	#search  { float: right; margin: 9px 0 0; width: 205px; }
+		input.field { float: left; background: #808080; color: #ccc; padding: 4px; border: 0; margin: 0 5px 0 0; width: 170px; font: .8em "Trebuchet MS", Arial, Sans-Serif; }
+			input.field:focus { border-bottom: 1px dotted #ccc; color: #fff; }
+		input.button { float: right; background: url(../img/search.gif) no-repeat; width: 20px; height: 13px; border: 0; margin: 5px 0 0; }
+
+	#menu { padding: 0 0 8px; margin: 0 0 25px; height: 20px;  }
+		#menu li { display: inline; }
+		#menu li a { float: left; width: 86px; text-align: center; margin: 0 2px 0 0; font-weight: bold; font-size: .8em; padding: 16px 0 21px; color: #ccc; }
+			#menu li a:hover, #menu li a.current { color: #AF1515; background: url(../img/menu.gif) no-repeat center bottom; }
+			#menu li a.important{ color: #CCFF00; }
+		
+	#logo { float: left; margin: 20px 0 0; }
+	.feature{ color: #000; float: right; background: #FFF; width: 580px; height: 160px; margin: 0 0 40px; font-size: 1.1em; font-style: italic; padding: 10px 10px 2px; }
+		.feature img { float: left; margin: 0 20px 0 0; }
+		.feature p { margin: 10px 0 0; }
+		.more { font-size: .74em; font-weight: bold; margin: 0 5px 0 0; color: #390505; font-style: normal; }
+
+	#feature_menu { float: right; }
+		#feature_menu li { display: inline; }
+		#feature_menu li a { color: #000000; float: left; padding: 6px 14px 6px 21px; margin: 0 0 0 2px; background: #C6E5F9 url(../img/bullet.gif) no-repeat 7px 12px; font-size: .8em; font-weight: bold; }
+			#feature_menu li a:hover { color: #071F2D; background: #fff url(../img/bullet_hover.gif) no-repeat 7px 8px; }
+			#feature_menu li a.current { background: #fff url(../img/bullet.gif) no-repeat 5px 12px; }
+
+			
+/***** Cuerpo Central (left) *****/
+
+			
+	#left { float: left; width: 550px; margin: 0 0 10px; text-align: justify; }
+			#left .enlaceVer { color: #7EA4BC; }
+			#left .enlaceCrear { color: #7EA4BC; }
+			#left .verMas { display:block; color: #7EA4BC; -moz-border-radius:5px; background:#EFF8FD; margin:10px; border:1px solid #A49D81; padding:5px;}
+			
+				
+			.modiPublicacion { float:right; position:relative; top:-23px; right:8px;}
+			.delePublicacion { float:right; position:relative; top:-23px; }  
+			
+			.borradoOk { background:none repeat scroll 0 0 #EFF8FD;  color:blue; float:right; padding:10px; position:relative; }		
+			.borradoOk  .No{ background:none repeat scroll 0 0 #EFF8FD;  color:red; float:right; padding:10px; position:relative; }		
+			
+			#botonera { margin:1em;padding:1em; overflow:auto; clear:both;}
+			#botonera  #nuevo{ float:right; position:relative; right:23px; top:0px; }
+			
+		.subtitle { font-weight: bold; font-style: italic; font-size: 1.1em; margin: 0 0 4px; } 
+		.fecha { background: #fff; padding: 5px 0; border-right: 1px solid #D3EAFA; border-bottom: 1px solid #D3EAFA; color: #ccc; float: left; width: 80px; margin: 7px 12px 5px 0; text-align: center; }
+		.fecha span { font-size: 1.6em; }
+				#combo1 { margin: 20px;}
+				
+				
+			#tabla, #tablaGoles { clear:both; margin:auto -1%;}
+				a.ok{ background:url(../img/comparar-equipos.gif) repeat scroll 0 -32px transparent; display:block; float:right; height:32px;  width:121px; position:relative; right:15px; margin-top:5px;}
+				a.okdes{ background:url(../img/comparar-equipos.gif) repeat scroll 0 0px transparent;}
+				span.aviso{ -moz-border-radius:5px; display:block; float:right; bottom:6px; position:relative; color:white; padding:4px 8px; right:20px;} 
+				#nuevaBusqueda a{ -moz-border-radius:5px; background:#EFF8FD; border:1px solid #A49D81; padding:5px;}
+				
+				
+				#buscar { margin:0px; font-family:georgia; float:left; }
+				#buscar input:focus{ background:#EAE7D6; }
+				
+				
+				#jugadores { border-collapse:collapse; margin:auto; text-align:center; width:850px;}
+					#jugadores  td{ border:1px solid;  vertical-align:middle; font-size:14px;}
+					#jugadores  th{ border:1px solid;  vertical-align:middle; background:url(../img/titTabla.gif);}
+					#jugadores  th span{ text-decoration:underline; }
+					#jugadores  .modi, #jugadores  .modiGoles, #jugadores .dele{  vertical-align:middle; }
+					#jugadores  tr:hover{	background:#CCCCCC; }
+					#jugadores td.encuentros_goleadores { border:0 solid; }
+				
+
+				
+				#usuarios{ border-collapse:collapse; float:right; margin:4em 1em; text-align:center; width:66%; }
+					#usuarios  td{ border:1px solid;  vertical-align:middle; font-size:14px; }
+					#usuarios  th{ border:1px solid;  vertical-align:middle; background:url(../img/titTabla.gif); }
+					#usuarios label { color:#000000; margin:0; padding:0; }
+					#usuarios input { margin:0 5px; }
+					#usuarios  tr:hover{	background:#CCCCCC;}
+				
+				#usuariosAdmin{ border-collapse:collapse; margin:2em auto; width:95%; text-align:center; }
+					#usuariosAdmin  td{ border:1px solid;  vertical-align:middle; font-size:14px; }
+					#usuariosAdmin  th{ border:1px solid;  vertical-align:middle; background:url(../img/titTabla.gif); }
+					#usuariosAdmin label { color:#000000; margin:0; padding:0; }
+					#usuariosAdmin input { margin:0 5px; }
+					#usuariosAdmin  tr:hover{	background:#CCCCCC;}
+					#usuariosAdmin td img { border:1px solid black; max-height:5em; max-width:5em; padding:3px; }
+	
+	#formulario #muestra_jornada{ margin:1em; }
+
+	.contentPlus{ background:none repeat scroll 0 0 #FFFFFF; border:1px solid #CCCCCC; clear:both; margin:2px -3px; padding:5px;	
+				min-height:500px; overflow:hidden; position:relative; }
+	
+	.contentPlus .accesoDenegado{ padding:2em; margin:1em; }
+	
+	.contentPlus .botonesForm, .content .botonesForm { float:left; margin:1em; }
+	
+	#MisDatos{ margin:30px; padding:0; } 
+	#MisDatos .boton { float:left; margin:2px;}
+	#MisDatos .modiPublicacionUser { border:medium none;left:5px;position:relative;top:24px;}
+	
+	.encabezadoPagina { text-align:center; font-size:20px; font-family:cursive; margin:1em; }
+	.encabezadoPagina_index { display:inline;
+				font-family:georgia;
+				font-size:20px;
+				margin-left:3em;
+				position:relative;
+				top:-3em;
+				}
+	.modoAbsolute { float:left; margin:1em; }
+
+	
+/*****  Lateral  *****/
+					
+	#side{ float: right; width: 300px; margin:0.2em 1em; font-size: .9em; }
+		#side h3 { color: #ccc; height: 16px; margin:5px; }
+
+	.boxtop { background: url(../img/box.gif) no-repeat top; padding: 2px 0; }
+	.box { padding: 3px 6px; background: #363636; }
+		.box .centrado{ margin:auto 22%;}
+		.box  .modoAbsolute { border:0.1em solid white; bottom:19em; float:right; position:relative; right:1em; }
+		.box  .modoAbsoluteH3 { bottom:14em; float:right; position:relative; right:5em; }
+	.boxbottom { background: url(../img/box.gif) no-repeat bottom; padding: 2px 0; }
+
+	.caja { font-size: .94em; display: block; color: #ccc; background: #fff url(../img/item.gif) no-repeat; height: 54px; padding: 4px 10px; margin: 0 0 5px; }
+		.caja.last { margin: 0; }
+		.caja:hover { background: #fff url(../img/item.gif) no-repeat bottom; color: #fff; }
+		.caja strong { color: #FFFAD3; line-height: 27px; }
+			.sidedate { float: left; width: 35px; text-align: center; padding: 4px 9px 0 0; font-size: 1.6em; margin: 0 12px 12px 0; border-right: 1px dotted #808080; }
+			.sidedate span { font-size: .6em; font-weight: bold; color: #808080; }
+
+			
+/****  Pie  *****/			
+	#ad { background: url(../img/dot.gif) repeat-x; padding: 15px 0 10px; clear: both; font-size: .9em; line-height: 1.7em;  }
+	#pie { clear: both; border-top: 3px solid #6E6E6E; background: #505050 url(../img/footer.gif) no-repeat right top; color: #ccc; padding: 30px 0 0 0; }
+		#pie h2 { color: #fff; }
+		#pie img { border:1px solid white; padding:3px; height:48px; margin:1em; width:64px;}
+		#pie a { color: #D9EAF9; border-bottom: 1px dotted #808080; }
+		.col { float: left; width: 280px; margin: 0 30px 20px 0; }
+		.col p{ float:left; }
+			.last { margin: 0; }
+	#footer { clear: both; padding: 15px 0; font-size: .84em; color: #808080; border-top: 1px dotted #666; }
+
+	#pop { z-index:2; position:absolute; border:1px solid white; text-align:center; background:#FFE4C4; -moz-border-radius:1em; padding:1em; }
+	#pop p { padding:2em; font-size:1.4em; }
+	#pop p span { font-size:1.6em; }
+	#cerrar { float:right; margin-right:5px; cursor:pointer; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; 
+		font-weight:bold; color:#FFFFFF; background-color:#666666; width:12px; position:relative; margin-top:5px; 
+		text-align:center; }
+		
+	#overlay { background:#000; display:none; left:0; position:absolute; top:0; width:100%; z-index:1; }

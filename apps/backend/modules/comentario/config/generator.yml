@@ -1,0 +1,28 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           comentario
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          comentario
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+           title: Listado de comentarios
+           display: [idComentario, idNoticia, nombre_usuario, Cuerpo]
+           fields:
+                   idComentario: { label: "Id"}
+                   idNoticia: { label: "Noticia"}
+                   nombre_usuario: { label: "Usuario"}
+      filter:  ~
+      form:    ~
+      edit:
+        title: Modificando el comentario %%idComentario%%
+      new:     ~

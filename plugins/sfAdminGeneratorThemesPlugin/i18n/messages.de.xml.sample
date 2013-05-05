@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<xliff version="1.0">
+  <file source-language="EN" target-language="de" datatype="plaintext" original="messages" date="2009-08-15T13:24:22Z" product-name="messages">
+    <body>
+      <!-- sfDoctrineGuardPlugin -->
+      <trans-unit>
+        <source>Description</source>
+        <target>Beschreibung</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Filter groups</source>
+        <target>Gruppen filtern</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Filter users</source>
+        <target>Benutzer filtern</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Filter permissions</source>
+        <target>Berechtigungen filtern</target>
+      </trans-unit>
+      
+      <!-- sfGuardUser admin module -->
+      <trans-unit>
+        <source>User %1% successfully created</source>
+        <target>Benutzer %1% erfolgreich angelegt</target>
+      </trans-unit>
+      <trans-unit>
+        <source>User %1% successfully updated</source>
+        <target>Benutzer %1% erfolgreich aktualisiert</target>
+      </trans-unit>
+      <trans-unit>
+        <source>User %1% successfully deleted</source>
+        <target>Benutzer %1% erfolgreich gelöscht</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You must select at least one user and an action to execute.</source>
+        <target>Sie müssen mindestens einen Benutzer und eine Aktion auswählen.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You must select an action to execute on the selected users.</source>
+        <target>Sie müssen eine Aktion zum Ausführen auf den ausgewählten Benutzern auswählen.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You must select at least one user.</source>
+        <target>Sie müssen mindestens einen Benutzer auswählen.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>A problem occurred when deleting the selected users as some users do not exist anymore.</source>
+        <target>Ein Problem trat beim Löschen der ausgewählten Benutzer auf, da einige Benutzer nicht mehr existieren.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The selected users have been deleted successfully.</source>
+        <target>Die ausgewählten Benutzer wurden erfolgreich gelöscht.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>A problem occurred when deleting the selected users.</source>
+        <target>Ein Problem trat beim Löschen der ausgewählten Benutzer auf.</target>
+      </trans-unit>
+      
+      <!-- sfGuardGroup admin module -->
+      <trans-unit>
+        <source>Group %1% successfully created</source>
+        <target>Gruppe %1% erfolgreich angelegt</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Group %1% successfully updated</source>
+        <target>Gruppe %1% erfolgreich aktualisiert</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Group %1% successfully deleted</source>
+        <target>Gruppe %1% erfolgreich gelöscht</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You must select at least one group and an action to execute.</source>
+        <target>Sie müssen mindestens eine Gruppe und eine Aktion auswählen.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You must select an action to execute on the selected groups.</source>
+        <target>Sie müssen eine Aktion zum Ausführen auf den ausgewählten Gruppen auswählen.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You must select at least one group.</source>
+        <target>Sie müssen mindestens eine Gruppe auswählen.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>A problem occurred when deleting the selected groups as some groups do not exist anymore.</source>
+        <target>Ein Problem trat beim Löschen der ausgewählten Gruppen auf, da einige Gruppen nicht mehr existieren.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The selected groups have been deleted successfully.</source>
+        <target>Die ausgewählten Gruppen wurden erfolgreich gelöscht.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>A problem occurred when deleting the selected groups.</source>
+        <target>Ein Problem trat beim Löschen der ausgewählten Gruppen auf.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You cannot delete a group you are in yourself!</source>
+        <target>Sie können keine Gruppe löschen, in der Sie selbst eingetragen sind!</target>
+      </trans-unit>
+      
+      <!-- sfGuardPermission admin module -->
+      <trans-unit>
+        <source>Permission %1% successfully created</source>
+        <target>Berechtigung %1% erfolgreich angelegt</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Permission %1% successfully updated</source>
+        <target>Berechtigung %1% erfolgreich aktualisiert</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Permission %1% successfully deleted</source>
+        <target>Berechtigung %1% erfolgreich gelöscht</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You must select at least one permission and an action to execute.</source>
+        <target>Sie müssen mindestens eine Berechtigung und eine Aktion auswählen.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You must select an action to execute on the selected permissions.</source>
+        <target>Sie müssen eine Aktion zum Ausführen auf den ausgewählten Berechtigungen auswählen.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You must select at least one permission.</source>
+        <target>Sie müssen mindestens eine Berechtigung auswählen.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>A problem occurred when deleting the selected permissions as some permissions do not exist anymore.</source>
+        <target>Ein Problem trat beim Löschen der ausgewählten Berechtigungen auf, da einige Berechtigungen nicht mehr existieren.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The selected permissions have been deleted successfully.</source>
+        <target>Die ausgewählten Berechtigungen wurden erfolgreich gelöscht.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>A problem occurred when deleting the selected permissions.</source>
+        <target>Ein Problem trat beim Löschen der ausgewählten Berechtigungen auf.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

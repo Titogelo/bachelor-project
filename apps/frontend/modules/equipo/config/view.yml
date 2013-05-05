@@ -1,0 +1,8 @@
+indexSuccess:
+   javascripts: [-*, jquery-1.5.1.min.js, jquery.dataTables.js, configura_tabla_equipos.js]
+   stylesheets: [paginador_1.css, paginador_2.css]
+   metas:
+    title: Equipos - Club Deportivo Vallobin
+showSuccess:
+   metas:
+    title: Equipo - Club Deportivo Vallobin

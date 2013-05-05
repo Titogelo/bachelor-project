@@ -1,0 +1,24 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           jugador
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          jugador
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+           title: Listado de jugadores    
+           display: [idJugador, =nombre_jugador, apellidos_jugador, Posicion]
+      filter:  ~
+      form:    ~
+      edit:
+        title: Modificando los datos de jugador de "%%nombre_jugador%% %%apellidos_jugador%%"
+      new:     ~

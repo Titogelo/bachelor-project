@@ -1,0 +1,25 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           equipo
+    theme:                 ahAdmin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          equipo
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields: ~
+      list:
+           title: Listado de equipos
+           display: [Idequipo, Numjugadores, Nombre, Idclub]
+           fields: 
+                   - Nombre: { is_sortable: true }
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

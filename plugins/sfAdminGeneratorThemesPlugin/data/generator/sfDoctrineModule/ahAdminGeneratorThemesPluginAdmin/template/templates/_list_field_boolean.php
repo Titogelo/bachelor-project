@@ -1,0 +1,5 @@
+[?php if ($value): ?]
+  [?php echo image_tag('icons/tick.png', array('alt_title' => __('yes', array(), 'sf_admin'))) ?] [?php echo __('yes', array(), 'sf_admin') ?]
+[?php else: ?]
+  [?php echo image_tag('icons/cross.png', array('alt_title' => __('no', array(), 'sf_admin'))) ?] [?php echo __('no', array(), 'sf_admin') ?]
+[?php endif; ?]

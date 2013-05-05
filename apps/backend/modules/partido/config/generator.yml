@@ -1,0 +1,25 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           partido
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          partido
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+           title: Listado de partidos   
+           display: [idJornada, nombre_equipo_local, nombre_equipo_visitante]
+      filter:  ~
+      form:
+              display: [idcategoria, idjornada, idequipolocal, idequipovisitante, goleslocal, golesvisitante]
+      edit:
+        title: Modificando el partido "%%nombre_equipo_local%% - %%nombre_equipo_visitante%%"
+      new:     ~

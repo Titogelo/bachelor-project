@@ -1,0 +1,45 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+  
+sf_guard_signin:
+  url:   /entrada
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /salida
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_register:
+  url:   /registro
+  param: { module: sfGuardRegister, action: index }
+
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }
+
+#equipo:
+#  url: /equipo/:idequipo
+#  param: { module: equipo, action: index }
+  
+#jugador:
+#  url: /jugador/:idjugador
+#  param: { module: jugador, action: index }
+  
+#prueba_json:
+#  url: /json_url
+#  param: { module: jugador, action: comparar, sf_format: xml }
+
+# default rules
+homepage:
+  url:   /
+  param: { module: noticia, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*
+  

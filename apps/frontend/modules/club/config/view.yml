@@ -1,0 +1,4 @@
+all:
+   javascripts: [-*]
+   metas:
+    title: Club - Club Deportivo Vallobin

@@ -1,0 +1,214 @@
+# ahAdminGeneratorThemesPlugin plugin #
+
+The `ahAdminGeneratorThemesPlugin` is a symfony plugin that provides two symfony admin generator themes with additional features.
+
+A big thanks goes out to Francois Zaninotto who provided the Propel implementation of this. I simply ported it to Doctrine. :)
+
+## Installation ##
+
+  * Install the plugin (via a package)
+
+        symfony plugin:install ahAdminGeneratorThemesPlugin
+
+  * Install the plugin (via a Subversion checkout)
+  
+        svn co http://svn.symfony-project.com/plugins/ahAdminGeneratorThemesPlugin/trunk plugins/ahAdminGeneratorThemesPlugin
+
+  * Install the plugin (via a Git clone)
+  
+        git clone git://github.com/annismckenzie/ahAdminGeneratorThemesPlugin
+
+  * Activate the plugin in `config/ProjectConfiguration.class.php`
+  
+        [php]
+        class ProjectConfiguration extends sfProjectConfiguration
+        {
+          public function setup()
+          {
+            $this->enablePlugins(array(
+              'sfDoctrinePlugin', 
+              'ahAdminGeneratorThemesPlugin',
+              '...'
+            ));
+          }
+        }
+  
+  * To enable a theme, edit your `generator.yml` and change the `theme` property from `admin` to `ahAdmin` (or `ahAdminGeneratorThemesPluginAdmin`), as follows:
+  
+        [yaml]
+        generator:
+          class: sfDoctrineGenerator
+          param:
+            model_class:           Book
+            theme:                 ahAdmin        # or: ahAdminGeneratorThemesPluginAdmin
+            non_verbose_templates: true
+            with_show:             false
+            singular:              Book
+            plural:                Books
+            route_prefix:          book
+            with_doctrine_route:   true
+            actions_base_class:    sfActions
+  
+  * Clear your cache
+  
+        symfony cc
+  
+You can now use the additional features listed below.
+
+## Additional features to the standard symfony Doctrine admin generator ##
+
+### Sorting On A Virtual Column ###
+
+The new theme provides an easy way to make virtual columns sortable in the list view. Just declare the corresponding fields with `is_sortable` to `true`, and the generated module will look for an `orderByXXX()` method in the generated query. For instance, to allow a book list to be sortable on the author name:
+
+    [yaml]
+    # in generator.yml
+    list:
+      display: [title, Author]
+      fields: 
+        - Author:      { is_sortable: true }
+
+Then the generator will try to execute `BookTable::orderByAuthor()` whenever the user clicks on the `Author` header to sort on this column. The method must be implemented as follows:
+
+    [php]
+    class BookTable extends Doctrine_Table
+    {
+      public function orderByAuthor(Doctrine_Query $q, $direction = 'asc')
+      {
+        return $q->orderBy($q->getRootAlias().'.Author.Lastname '.$direction);
+      }
+    }
+
+You can override the default sorting method name for a field by setting the `sort_method` parameter:
+
+    [yaml]
+    # in generator.yml
+    list:
+      display: [title, Author]
+      fields: 
+        - Author:      { is_sortable: true, sort_method: orderByAuthorLastName }
+        
+The generator will execute `BookTable::orderByAuthorLastName()` instead of `BookTable::orderByAuthor()` in that case. 
+
+And there you have it. Now it's possible to sort on any column, be that a virtual column or a partial. What you have to figure out for yourself is, especially for partials that display multiple columns, the sort column and the direction, so the sorting is meaningful for the user.
+
+### Customizable titles ###
+
+With the standard admin generator theme it's tedious to style the titles (list, new and edit) because they are hard-coded like this:
+
+    [php]
+    <h1>[List, New, Edit] Title</h1>
+
+To mitigate this I wrapped this up in the module_header slot. All you need to do is add a partial "_module_header.php" with the following content:
+
+    [php]
+    <h1 class="whatever"><?php echo get_slot('module_header') ?></h1>
+
+And include that partial in your layout like so:
+
+    [php]
+    <?php include_partial('module_or_global/module_header') ?>
+
+Unfortunately, you'll need to do this even if you don't want to add CSS classes or other things to your headers but I think the advantages far outweigh the disadvantages. :)
+
+I also recommend you install the `tsTitlePlugin` as it will make html &lt;title&gt; cascading possible like so: "AdminModule > Object".
+
+## ahAdminGeneratorThemesPluginAdmin: more additional features! ##
+
+This theme is not for the faint of heart. It needs the plugins `ahToolkitPlugin` and `sfDoctrineGuardPlugin` to work and you'll need to add a method to your myUser.class.php.
+
+    [php]
+    # in apps/frontend/lib/myUser.class.php
+    class myUser extends sfGuardSecurityUser
+    {
+      public function getNextRedirect($remove = true)
+      {    
+        return $remove ? $this->getAttributeHolder()->remove('next_redirect', '@homepage') : 
+          $this->getAttribute('next_redirect', '@homepage');
+      }
+      
+      public function setNextRedirect($route)
+      {
+        $this->setAttribute('next_redirect', $route);
+      }
+    }
+
+Now, activate the `ahCommon` module in your `settings.yml` and add this to your layout:
+
+    [php]
+    <?php include_partial('ahCommon/flashes') ?>
+
+This is to display the flash messages.
+
+You'll also need to change the default `class` parameters from `sfDoctrineGenerator` to `ahDoctrineGenerator` like so:
+
+    [yaml]
+    generator:
+      class: ahDoctrineGenerator
+      ...
+
+### Real use of the `singular` and `plural` generator.yml parameters ###
+
+Symfony's default admin generator theme the `singular` and `plural` have no real use which I changed. :) In your `generator.yml` you'll need to set those like so:
+
+    [yaml]
+    generator:
+      class: ahDoctrineGenerator
+      param:
+        ...
+        singular:              Book
+        plural:                Books
+        ...
+
+You can even set those to be more than one word which crashes symfony's default admin generator. Like so:
+
+    [yaml]
+    generator:
+      class: ahDoctrineGenerator
+      param:
+        ...
+        singular:              Test Scenario
+        plural:                Test Scenarios
+        ...
+
+Those will now be used in the view titles (if you don't change the default title in the list, new, or edit sections in the `generator.yml`).
+
+Now, here comes another thing you'll need to do (you'll hate me for this, I think): you'll need to provide a quite extensive i18n file to go with this because the singular and plural form is also used to provide much better flash messages. Take a look into the messages.de.xml.sample file that comes with the plugin. All in all you'll need to provide at least 10 translations per module.
+
+Phew, I might have forgotten something. But you can contact me, see the end of this README. :)
+
+### Configurable show view ###
+
+Activate the show view generation in the `generator.yml`:
+  
+    [yaml]
+    generator:
+      class: sfDoctrineGenerator
+      param:
+        ...
+        with_show:             true
+        ...
+
+And configure it like so:
+
+    [yaml]
+    # in generator.yml
+    show:
+      display: [...]
+
+### Different form classes for the new and edit screens ###
+
+This should be pretty self-explanatory:
+
+    [yaml]
+    # in generator.yml
+    new:
+      class: NewBookForm
+    edit:
+      class: EditBookForm
+
+## Questions, bugs, feature requests? ##
+
+I can be reached via e-mail: info@asapdesign.de
+
+If you find bugs, have questions and/or feature requests, you can post to the symfony-user mailing list, of which I am an avid follower. :)

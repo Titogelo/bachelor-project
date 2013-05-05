@@ -1,0 +1,975 @@
+Categoria:
+  connection: doctrine
+  tableName: categoria
+  columns:
+    nombre:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    idtemporada:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    idcategoria:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    created_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    updated_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Temporada:
+      local: idtemporada
+      foreign: idtemporada
+      type: one
+    Clasificacion:
+      local: idcategoria
+      foreign: idcategoria
+      type: many
+    Partido:
+      local: idcategoria
+      foreign: idcategoria
+      type: many
+Clasificacion:
+  connection: doctrine
+  tableName: clasificacion
+  columns:
+    idequipo:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    idjornada:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    posicion:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    puntos:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    favor:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    contra:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    idcategoria:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    idclasificacion:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    jugados:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    ganados:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    empatados:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    perdidos:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    created_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    updated_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Categoria:
+      local: idcategoria
+      foreign: idcategoria
+      type: one
+    Equipo:
+      local: idequipo
+      foreign: idequipo
+      type: one
+    Jornada:
+      local: idjornada
+      foreign: idjornada
+      type: one
+Club:
+  connection: doctrine
+  tableName: club
+  columns:
+    idclub:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    nombre:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fundacion:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    campo:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    escudo:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    capacidad:
+      type: float(18)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    sede:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    historia:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    foto_campo:
+      type: string(400)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    titulo_historia:
+      type: string(200)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Equipo:
+      local: idclub
+      foreign: idclub
+      type: many
+    Persona:
+      local: idclub
+      foreign: idclub
+      type: many
+Comentario:
+  connection: doctrine
+  tableName: comentario
+  columns:
+    idcomentario:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    idnoticia:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    idusuario:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    cuerpo:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    avatar:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    created_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    updated_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Noticia:
+      local: idnoticia
+      foreign: idnoticia
+      type: one
+    SfGuardUserProfile:
+      local: idusuario
+      foreign: idusuario
+      type: one
+Directivo:
+  connection: doctrine
+  tableName: directivo
+  columns:
+    iddirectivo:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    idpersona:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    cargo:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    antecesor:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    observaciones:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Persona:
+      local: idpersona
+      foreign: idpersona
+      type: one
+Entrenador:
+  connection: doctrine
+  tableName: entrenador
+  columns:
+    identrenador:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    idpersona:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    idequipo:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    activo:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+  relations:
+    Equipo:
+      local: idequipo
+      foreign: idequipo
+      type: one
+    Persona:
+      local: idpersona
+      foreign: idpersona
+      type: one
+Equipo:
+  connection: doctrine
+  tableName: equipo
+  columns:
+    idequipo:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    numjugadores:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    idclub:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Club:
+      local: idclub
+      foreign: idclub
+      type: one
+    Clasificacion:
+      local: idequipo
+      foreign: idequipo
+      type: many
+    Entrenador:
+      local: idequipo
+      foreign: idequipo
+      type: many
+    Jugador:
+      local: idequipo
+      foreign: idequipo
+      type: many
+    Partido:
+      local: idequipo
+      foreign: idequipolocal
+      type: many
+    Partido_3:
+      class: Partido
+      local: idequipo
+      foreign: idequipovisitante
+      type: many
+Goles:
+  connection: doctrine
+  tableName: goles
+  columns:
+    idgoles:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    idpartido:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    idjugador:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    minuto:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Jugador:
+      local: idjugador
+      foreign: idjugador
+      type: one
+    Partido:
+      local: idpartido
+      foreign: idpartido
+      type: one
+Jornada:
+  connection: doctrine
+  tableName: jornada
+  columns:
+    idjornada:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    numjornada:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fechajornada:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Clasificacion:
+      local: idjornada
+      foreign: idjornada
+      type: many
+    Partido:
+      local: idjornada
+      foreign: idjornada
+      type: many
+Jugador:
+  connection: doctrine
+  tableName: jugador
+  columns:
+    idjugador:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    idpersona:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    goles:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    altura:
+      type: float(18)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0.00'
+      notnull: false
+      autoincrement: false
+    peso:
+      type: float(18)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0.00'
+      notnull: false
+      autoincrement: false
+    amarillas:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    rojas:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    idequipo:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    posicion:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Persona:
+      local: idpersona
+      foreign: idpersona
+      type: one
+    Equipo:
+      local: idequipo
+      foreign: idequipo
+      type: one
+    Goles:
+      local: idjugador
+      foreign: idjugador
+      type: many
+Noticia:
+  connection: doctrine
+  tableName: noticia
+  columns:
+    idnoticia:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    titulo:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    cuerpo:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    idusuario:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    descripcionimagen:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    created_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    updated_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Comentario:
+      local: idnoticia
+      foreign: idnoticia
+      type: many
+    SfGuardUserProfile:
+      local: idusuario
+      foreign: idusuario
+      type: one
+Partido:
+  connection: doctrine
+  tableName: partido
+  columns:
+    idjornada:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    idequipolocal:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    idequipovisitante:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    goleslocal:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    golesvisitante:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    idcategoria:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    idpartido:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    actualizado:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Categoria:
+      local: idcategoria
+      foreign: idcategoria
+      type: one
+    Equipo:
+      local: idequipolocal
+      foreign: idequipo
+      type: one
+    Equipo_3:
+      class: Equipo
+      local: idequipovisitante
+      foreign: idequipo
+      type: one
+    Jornada:
+      local: idjornada
+      foreign: idjornada
+      type: one
+    Goles:
+      local: idpartido
+      foreign: idpartido
+      type: many
+Persona:
+  connection: doctrine
+  tableName: persona
+  columns:
+    idpersona:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    nombre:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    apellidos:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    edad:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    nif:
+      type: string(9)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    created_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    updated_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    foto:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    idclub:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Club:
+      local: idclub
+      foreign: idclub
+      type: one
+    Directivo:
+      local: idpersona
+      foreign: idpersona
+      type: many
+    Entrenador:
+      local: idpersona
+      foreign: idpersona
+      type: many
+    Jugador:
+      local: idpersona
+      foreign: idpersona
+      type: many
+    SfGuardUserProfile:
+      local: idpersona
+      foreign: idpersona
+      type: many
+    Usuario:
+      local: idpersona
+      foreign: idpersona
+      type: many
+SfGuardUserProfile:
+  connection: doctrine
+  tableName: sf_guard_user_profile
+  columns:
+    idusuario:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    user_id:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    foto:
+      type: string(500)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    idpersona:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    SfGuardUser:
+      class: sfGuardUser
+      local: user_id
+      foreign: id
+      type: one
+      foreignType: one
+      foreignAlias: Profile
+    Persona:
+      local: idpersona
+      foreign: idpersona
+      type: one
+Temporada:
+  connection: doctrine
+  tableName: temporada
+  columns:
+    idtemporada:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    anio:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    created_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    updated_at:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Categoria:
+      local: idtemporada
+      foreign: idtemporada
+      type: many
+Usuario:
+  connection: doctrine
+  tableName: usuario
+  columns:
+    idusuario:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    idpersona:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Persona:
+      local: idpersona
+      foreign: idpersona
+      type: one

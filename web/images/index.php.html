@@ -1,0 +1,792 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+ 
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="index.php_files/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="index.php_files/print.css" type="text/css" media="print">
+
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.vallobas.com/modulos/rss.php">
+<link href="http://www.vallobas.com/img/vallobas.ico" rel="shortcut icon">
+<link type="text/css" href="index.php_files/jquery.css" rel="stylesheet">
+
+<script type="text/javascript" src="index.php_files/jquery-1.js"></script>
+<script type="text/javascript" src="index.php_files/jquery_003.js"></script>
+<script type="text/javascript" src="index.php_files/jquery_007.js"></script>
+<script type="text/javascript" src="index.php_files/jquery.js"></script>
+<script type="text/javascript" src="index.php_files/jquery_005.js"></script>
+<script type="text/javascript" src="index.php_files/jquery_002.js"></script>
+<script type="text/javascript" src="index.php_files/jquery_004.js"></script>
+<script type="text/javascript" src="index.php_files/jquery_004.html"></script>
+<script type="text/javascript" src="index.php_files/jquery_002.html"></script>
+<script type="text/javascript" src="index.php_files/jquery_003.html"></script>
+<script type="text/javascript" src="index.php_files/jquery.html"></script>
+
+<script type="text/javascript" src="index.php_files/jquery-ui-1.js"></script>
+
+
+<link rel="stylesheet" href="index.php_files/jquery_002.css">
+<link rel="stylesheet" href="index.php_files/jquery_003.css">
+
+<script type="text/javascript" src="index.php_files/jquery_008.js"></script>
+<script type="text/javascript" src="index.php_files/jquery_006.js"></script>
+
+
+
+<meta name="verify-v1" content="FzfQwhszzCwJ+zrRJ4xc7F8BnWZK+sTo7PO51qbg+7o=">
+
+<meta name="keywords" content="C.D. Vallobín, Web, Club, Deportivo, Vallobín, Vallobas">
+<title>Página Web del Club Deportivo Vallobín</title></head><body>
+	<div id="cabecera">
+				<div class="profileLinks">
+			<ul>
+				<li class="profileItem" id="loginLink">
+					<a class="profile-link" href="http://www.vallobas.com/index.php?page=login"><strong>Entrar</strong></a>
+				</li>
+				<li class="profileItem" id="signupLink">
+					<a class="profile-link" href="http://www.vallobas.com/index.php?page=registro"><strong>Registrarse</strong></a>
+				</li>
+			</ul>
+		</div>
+
+<ul id="menu">
+	<li><a href="http://www.vallobas.com/index.php" title="Club">Home</a></li>
+	<li><a href="http://www.vallobas.com/index.php?page=club" title="Club">Club</a></li>
+	<li><a href="http://www.vallobas.com/index.php?page=deportivo" title="Deportivo">Deportivo</a></li>
+	<li><a href="http://www.vallobas.com/index.php?page=elAula" title="elAula">El Aula</a></li>
+	<!--<li><a href="index.php?page=agradecimientos" title="Agradecimientos">Agradecimientos</a></li>-->
+	<li><a href="http://www.vallobas.com/index.php?page=jugadores" title="Jugadores">Jugadores</a></li>
+	<li><a href="http://vallobas.mforos.com/" title="Foro">Foro</a></li>
+</ul>	</div>
+	<div class="cuerpo background">
+		<!--	<div id="eventos_relevantes">
+	<h2>Cena Final de Temporada: Mas información <a href="index.php?page=eventos">aquí.</a> Apúntate ya!</h2>
+</div>-->
+
+<script type="text/javascript" charset="utf-8">
+
+	function mostrar()
+	{ 
+		$("#pop").fadeIn('slow');
+		var opacidad = 0.8;
+		var display = 'block';
+		var h = $("body").height();
+		$("#overlay").css('opacity', opacidad);
+		$("#overlay").css('display', display);
+		$("#overlay").css('height', h);
+	}
+	
+	var veces_mostrado_aviso = 0;
+	
+	$(document).ready(function (){
+		if (veces_mostrado_aviso == 0)
+		{
+			//Conseguir valores de la img 
+			var ancho_contenido = $(".contentPlus").width(); 
+			var alto_contenido = 10;
+			
+			//Darle el alto y ancho 
+			$("#pop").css('width', ancho_contenido/1.5 + 'px'); 
+			$("#pop").css('height', alto_contenido + 'em');
+		
+			//Esconder el popup 
+			$("#pop").hide();
+		
+			//Consigue valores de la ventana del navegador 
+			var ancho_navegador = $(this).width(); 
+			
+			//Centra el popup    
+			var w = (ancho_contenido/2.5);
+			var h = 20; 
+			//h = (h/2) - (img_h/2); 
+			$("#pop").css("left",w + "px"); 
+			$("#pop").css("top",h + "em");
+		
+			setTimeout("mostrar()",1500);
+			
+			//Función para cerrar el popup 
+			$("#pop").click(function (){ 
+				$(this).fadeOut('slow');
+				var opacidad = 0;
+				var display = '';
+				$("#overlay").css('opacity', opacidad);
+				$("#overlay").css('display', display);
+			});
+		
+			veces_mostrado_aviso = veces_mostrado_aviso + 1;
+		}
+		
+		$(".modiPublicacion a").click(function(){
+			$('#tabla').show();
+			$("#formulario").show();
+			$.ajax({
+				type: "GET",
+				url: this.href,
+				success: function(datos){
+					$("#formulario").html(datos);
+				}
+			});
+			return false;
+		});
+		
+		$("#boton_administrador a.nuevo").click(function(){
+			$('#tabla').show();
+			$("#formulario").toggle();
+			$.ajax({
+				type: "GET",
+				url: 'modulos/Noticias/nuevo.php',
+				success: function(datos){
+					$("#formulario").html(datos);
+				}
+			});
+			return false;
+		});
+	});
+</script>
+<div class="contentPlus">
+	<img class="modoAbsolute" src="index.php_files/logo.png">
+	<h1 class="encabezadoPagina_index">Noticias Club Deportivo Vallobin</h1>
+	<object width="353" height="132"><embed src="index.php_files/external.swf" type="application/x-shockwave-flash" wmode="transparent" quality="high" width="353" height="132"></object>
+	
+
+		<div id="muestra_mensaje_corroboracion_accion"></div>
+	<div id="left">
+		<div id="formulario" style="display: none;">
+		</div>
+		<div id="tabla">
+			
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function (){
+		$(".imagen a[rel^='prettyPhoto']").prettyPhoto({theme:'facebook'});
+	});
+</script>
+
+		<div id="ultima_noticia">
+			<div id="fila-230" class="noticia">
+				<div class="titulo">Horarios de la cena</div>
+				<div class="fecha">08<br>Mayo</div>
+				<div class="principal"><div class="cuerpo_noticia"><p>Ya llega la cena y con ello los horarios de los buses... <br>
+En el primero  iran los regionales, chavales de pista y los alevines( y 
+respectivos entrenadores y acompañantes de los jugadores de cada equipo)
+ y saldrá a las ocho (20.00) del café de la tierra.<br>
+ El segundo bus saldrá a las nueves menos cuarto (20.45) estará formado 
+por los jugadores de los juveniles, infantiles y cadetes (idem que el 
+primer bus).<br>
+La cena <b>comenzará a las 9.30 de la noche</b> en el restaurante-parrila El Escamplero.<br>
+Los buses de vuelta serán a las 12.30-1 que será cuando acabe la entrega
+ de premios y la música estará a punto de comenzar y a las 2-2.30 que 
+será la hora que acabe la orquesta. Los buses de vuelta tendrán como 
+parada en el café de la tierra. Aunque el segundo tiene una variante que
+ nos dejará a todos aquellos que queramos en la zona centro de Oviedo.<br>
+Si tienen alguna duda ponerlo en el chat… Recordaros que después de la 
+cena, al llegar a Oviedo podemos acudir al Kudabhi ya que tenemos un 
+espacio reservado para continuar la fiesta.<br>
+Acabar de pagar los que todavía faltéis!!!<br>
+JG13<br>
+</p></div>
+				</div>
+				<div class="autor_noticia"> Esta noticia fue escrita por: lsegovia, a las 08/Mayo/2011-00:19</div>
+				<div class="comentarios_realizados"><p>Se  han  realizado 0  comentarios...</p></div>
+				<ul class="listComentarios230">
+					<li id="VerComent0" class="comentario primero">
+						<div class="foto_comentario">
+							<img src="index.php_files/negro.jpg" width="60">
+						</div>
+					
+						<div class="fecha_comentario">
+							<span> - </span>
+						</div>
+						<div class="contenido_comentario">
+							<p>No se ha realizado ningun comentario.</p>
+						</div>
+						<div class="autor_comentario">
+							<span>Autor: - </span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="resto_noticias">
+				<div id="fila-229" class="noticia"><div class="titulo">Actualidad Cena</div><div class="fecha">08<br>Mayo</div>
+					<div class="numero_noticia_vieja">Núm: #1</div>
+					<div class="cuerpo_noticia">Bueno, como todos sabeis el tema de la cena va segun lo previsto y hoy he confirmado menú y precio.<br>
+<br>
+La cosa quedaria de la siguiente manera:<br>
+<br>
+- Para los considerados adultos, es decir para los mayores de 12 años 
+salvo excepciones que se harán saber a los interesados, seran 35 euros 
+en total. Para los que no quieren ir en bus y van en sus propios coches 
+la cosa quedaria en 30 euros.<br>
+<br>
+- Para los mas jovenes mas de lo mismo, 15 para los que van en bus y 10 para los que van en los coches.<br>
+<br>
+- El menu para los mayores estará compuesto por:<br>
+1. Pate de cabracho<br>
+2. Entremeses frios y calientes<br>
+3. Cachopo con ensalada y patatas<br>
+4. Postres variados<br>
+5. agua, pan, vino, cerveza y sangria de todo tipo.<br>
+<br>
+Para los mas pequeños.<br>
+1. Entremeses frios y calientes<br>
+2. Escalpines<br>
+3. Postre <br>
+4. Agua, cocacola, kas<br>
+<br>
+Eso es todo por el momento.<br>
+<br>
+En los proximos dias ya podreis pagar, no obstante yo tengo una lista con lo que le corresponde a cada uno.<br>
+<br>
+Lo mas eficaz para tener ordenados estos pagos va ser que entregeis en 
+un sobre el dinero junto con vuestro nombre y ESPECIFICANDO SI VAIS O NO
+ EN AUTOBUS. Para aquellos que vayan en coche y vuelvan en bus deberan 
+abonar la totalidad de los 5 euros correspondientes al autobus.<br>
+<br>
+Por mi parte nada mas ir comentando en el chat de la derecha si veis alguna sugerencia de mejora.<br>
+<br>
+RECORDAR EL DINERO EN UN SOBRE JUNTO CON EL NOMBRE Y SI VAIS EN AUTOBUS O NO.</div>
+					<div class="autor_noticia"> Esta noticia fue escrita por: 104, a las 08/Mayo/2011-00:19</div>
+				</div>
+				<div id="fila-228" class="noticia"><div class="titulo">Actualidad cena de Vallobin</div><div class="fecha">08<br>Mayo</div>
+					<div class="numero_noticia_vieja">Núm: #2</div>
+					<div class="cuerpo_noticia">Hola a todos, hoy por la tarde me he 
+reunido con el dueño del restaurante El Escamplero, y hemos llegado a un
+ acuerdo, con el cual hemos certificado que la cena de final de 
+temporada de Vallobín se va llevar a cabo. A continuación os explico un 
+poco los detalles:<br>
+<br>
+En primer lugar la cena va tener lugar en día 4 de JUNIO en el 
+restaurante el Escamplero. La hora esta todavía sin determinar pero en 
+los próximos días comenzaremos a concretar más detalles.<br>
+En segundo lugar, hemos hablado del precio y la cosa ha quedado en 10 
+euros para los menores de 12 años y para el resto un menú que tendremos 
+que confeccionar esta semana. El menu estará entre los 25 y 40 euros, 
+dependiendo del tipo de menú que se escoja al final.<br>
+En tercer lugar, se trató el tema del desplazamiento. En este caso se 
+nos abren dos opciones: la primera, básicamente incrementaría en 5 euros
+ el precio por comensal y ellos mismos se encargarían de contratar los 
+autobuses y gestionarlos. La segunda opción sería que nosotros los 
+contratásemos. En los próximos días y con todos los asistentes 
+confirmados valoraremos que opción sale más económica  y se os 
+comunicará.<br>
+Por último, el restaurante pone a disposición de los críos unos 
+castillos hinchables para que se puedan divertir si lo desean y además 
+ellos se encargan de la música porque ya la tienen contratada de 
+antemano.<br>
+<br>
+No sé si me dejo algo en el tintero pero en los próximos días os seguiré comentando como va la cosa.<br>
+<br>
+Un saludo y buenas noches.<br>
+</div>
+					<div class="autor_noticia"> Esta noticia fue escrita por: 25, a las 08/Mayo/2011-00:19</div>
+				</div>
+				<div id="fila-227" class="noticia"><div class="titulo">Gracias</div><div class="fecha">03<br>Mayo</div>
+					<div class="numero_noticia_vieja">Núm: #3</div>
+					<div class="cuerpo_noticia">Gracias por estar ahí en cada partido, 
+por cada grito de ánimo, por cada aplauso después de cada jugada, por el
+ empujarnos hacia la victoria desde la grada.<br>
+<br>
+Gracias por ser el jugador número 12, el que presiona más que nadie,el 
+que siempre tira del carro,el que lucha hasta el final mientras haya 
+esperanza,el que nunca abandona a su equipo.<br>
+<br>
+Gracias por mostrarnos una camiseta llena de sentimientos,que une desde 
+los mas pequeños a los más mayores, por recordarnos que nosotros la 
+defendemos,que tenemos que dar la cara y que no vamos a estar solos.<br>
+<br>
+Gracias por renunciar a vuestro tiempo y priorizar cada domingo el ir a 
+ver al primer equipo, poque sabéis que os necesitamos y vosotros no nos 
+queréis fallar.<br>
+<br>
+Gracias por hacer de este club una familia.<br>
+<br>
+GRACIAS</div>
+					<div class="autor_noticia"> Esta noticia fue escrita por: 104, a las 03/Mayo/2011-15:52</div>
+				</div>
+				<div id="fila-226" class="noticia"><div class="titulo">Vuelve la cena de final de temporada</div><div class="fecha">09<br>Abril</div>
+					<div class="numero_noticia_vieja">Núm: #4</div>
+					<div class="cuerpo_noticia">...supongo que los mas veteranos del 
+club y los no tan veteranos recordareis las cenas de final de temporada 
+que se realizaban allá por los meses de Mayo ó Junio. Con el paso del 
+tiempo me doy cuenta de lo necesarias que son estas cenas, ya que 
+fomentan la armonia y compañerismo entre jugadores y porqué no, entre 
+equipos. Por este motivo, Gerardo ( portero, entrenador y hombre para 
+todo ) y un servidor ( con la ayuda de todo aquel que quiera colaborar )
+ hemos puesto en marcha los preparativos de lo que será la cena de final
+ de temporada del presente año 2011.<br>
+<br>
+Antes de continuar queríamos dejar claro dos aspectos; en primer lugar 
+nunca hemos organizado un evento de tales características, y que por lo 
+tanto sabemos que estamos expuestos a cometer errores. En segundo lugar,
+ queremos incidir en la transparencia de la gestión de dicho evento. Por
+ lo que se irán comentando en esta web todos los avances que tengan 
+lugar.<br>
+<br>
+Bien, centrándonos en la cuestión. La próxima semana esta convocada una 
+reunión con los entrenadores, a los que se les explicarán los detalles 
+de la cena y además se les entregará una hoja en la que irán apuntando a
+ todos los  jugadores y padres que deseen ir. Como podéis observar no 
+hemos hablado de dinero, ya que hemos decidido estimar a través de estas
+ hojas de asistencia, el numero de personas que asistirán y en función 
+del número de asistentes se planteará la propuesta a los diferentes 
+restaurantes. De esta manera se intentará ajustar al máximo el precio 
+para que salga una cosa asequible. <br>
+<br>
+Para ir terminando, y después de esta parrafada que muchos no terminaran
+ de leer... jajaja os dejo un email de contacto para plantear 
+sugerencias, corregir fallos, etc... <br>
+<br>
+De verdad espero que todos aportemos lo que sea necesario para que esta 
+tradición no se pierda, no tanto, por los adultos si no por los niños, 
+para que cuando algún día crezcan y sean mayores recuerden estos 
+momentos como los más felices de sus vidas.<br>
+<br>
+He dicho.<br>
+<br>
+email: gelo3_3@hotmail.com<br>
+<br>
+Gelo ( ejerciendo de lateralucu en el Regional )<br>
+<br>
+</div>
+					<div class="autor_noticia"> Esta noticia fue escrita por: 104, a las 09/Abril/2011-02:52</div>
+				</div>
+		</div>		</div>
+	</div>
+	
+<script type="text/javascript" charset="utf-8">
+	/*
+		*	Fecha: 2010-08-05 Autor: Angel Suárez
+		*	
+		*	Plugin para la creacion de tab's con Jquery
+	*/
+	jQuery.fn.tab = function() {
+		var div = jQuery(this);
+		$(div).find("div").hide().eq(0).show();
+		$(div).find("ul li span").eq(0).addClass('selected');
+		$(div).find("ul li span").click(function(){
+			$(div).find("ul li span").removeClass('selected');
+			$(this).addClass('selected');
+			$(div).find("div").hide();
+			var aux = $(this).attr('title');
+			$('#'+aux).show();
+		});
+	}
+	
+	$(document).ready(function(){
+		$("#tab").tab();
+	});
+</script>
+<div id="side"> 
+	<div class="boxtop"></div>
+	<div class="box">
+		<h3>Escuchar himno de Vallobín </h3>
+		<h3>Chat de Vallobin</h3>
+		<!-- <![CDATA[ -->
+			<iframe src="index.php_files/a.html" marginheight="2" marginwidth="2" name="cboxmain" style="border: 1px solid rgb(99, 108, 117);" id="cboxmain" width="285" frameborder="0" height="140" scrolling="auto"></iframe><br>
+			<iframe src="index.php_files/a_002.html" marginheight="2" marginwidth="2" name="cboxform" style="border-right: 1px solid rgb(99, 108, 117); border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(99, 108, 117) rgb(99, 108, 117);" id="cboxform" width="285" frameborder="0" height="75" scrolling="no"></iframe>
+		<!--	]]>-->
+		<div id="tab" class="tab">
+			<ul>
+  				<li><span class="selected" title="tab1">Regional</span></li>
+  				<li><span title="tab2">Juvenil</span></li>
+  				<li><span title="tab3">Cadete</span></li>
+			</ul>
+		
+		
+			<div style="display: block;" id="tab1">
+				<h3>Clasificación Regional</h3>
+				<table id="tabla_clasificacion_inicio">
+					<thead>
+						<tr>
+							<th>Posicion</th>
+							<th>Equipo</th>
+							<th>Puntos</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">1</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1"> Real Tapia C.F.</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">33</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">2</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1"> Berron C.F.</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">28</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">3</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1"> Muros Balompie</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">28</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">4</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1"> Barcia C.F.</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">26</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">5</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1"> Atl. Siero</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">25</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">6</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1"> Rosal C.F.</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">23</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">7</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1"> Podes C.F.</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">23</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">8</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1"> Club Europa B</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">19</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">9</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1"> Gozon</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">19</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">10</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1"> C.D. Villa De Pravia</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">14</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">11</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">C.D. Vallobin</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">14</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">12</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">S.D.La Corredoria</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">14</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">13</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1"> C.D. Trasona</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">13</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">14</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1"> Celtic de Puerto</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">13</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">15</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1"> Puerto Vega C.F.</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">13</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">16</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1"> Iberia C.F.</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">13</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">17</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1"> U.D. San Claudio</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">12</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">18</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1"> C.D. Salas</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=1">2</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div style="display: none;" id="tab2">
+				<h3>Clasificación Juvenil</h3>
+				<table id="tabla_clasificacion_inicio">
+					<thead>
+						<tr>
+							<th>Posicion</th>
+							<th>Equipo</th>
+							<th>Puntos</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">1</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">Figaredo C.D.</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">21</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">2</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">C.D. Covadonga \"B\"</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">19</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">3</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">La Fresneda C.F.</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">17</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">4</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">S.D. Colloto</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">17</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">5</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">C.D. Vallobin</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">17</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">6</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">Juventud Estadio \"B\"</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">17</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">7</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">Atletico Lugones</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">15</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">8</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">Urraca C.F.</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">14</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">9</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">C.D. Los Arcos</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">11</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">10</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">C.D. Raices \"B\"</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">10</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">11</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">Condal Club</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">10</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">12</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">L\'Entregu C.F.</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">9</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">13</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">C.D. Ujo</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">6</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">14</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">C.D. Grujoan</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">5</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">15</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">A.D. Ribadedeva</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">5</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">16</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">C.D. Romanon \"B\"</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">5</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">17</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">San Esteban C.F.</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">5</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">18</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">C.D. Vallobin \"B\"</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=2">0</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div style="display: none;" id="tab3">
+				<h3>Clasificación Cadete</h3>
+				<table id="tabla_clasificacion_inicio">
+					<thead>
+						<tr>
+							<th>Posicion</th>
+							<th>Equipo</th>
+							<th>Puntos</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">1</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">C.D. Los Arcos</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">12</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">2</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">Prados San Julian</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">10</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">3</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">C.D. Vallobin</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">9</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">4</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">Real Juvencia</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">9</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">5</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">Colegio Loyola</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">7</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">6</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">Pumarin C.F.</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">6</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">7</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">Peña Marigil C.F.</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">6</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">8</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">S.D. Colloto B</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">6</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">9</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">U.D. San Claudio</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">6</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">10</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">P.D. Tudelano</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">4</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">11</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">S.D. La Corredoria B</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">3</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">12</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">Grisu C.F.</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">3</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">13</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">Centro Asturiano B</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">1</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">14</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">Col. Santa Teresa</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">0</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">15</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">C.D. Grujoan B</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">0</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">16</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">A.D. San Juan L.C.</a></td>
+							<td><a href="http://www.vallobas.com/index.php?page=deportivo&amp;temporada=1011&amp;equipo=4">0</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>	
+		<h3>Enlaces Importantes</h3>
+		<a href="http://lagradamanda.blogspot.com/">
+		<span class="caja">
+			<span class="sidedate">1<br><span>-</span></span>
+			<strong>La Grada Manda</strong><br>Blog sobre el deporte rey. A cargo de Luicho.
+		</span>
+		</a>
+		
+		<a href="http://www.vallobas.com/index.php?page=cronicas">
+		<span class="caja">
+			<span class="sidedate">2<br><span>-</span></span>
+			<strong>Minuto 90</strong><br>Cronicas de los partidos del regional.
+		</span>
+		</a>
+	
+		<a href="http://www.vallobas.com/index.php?page=quiniela">
+		<span class="caja">
+			<span class="sidedate">3<br><span>Nuevo</span></span>
+			<strong>Quiniela 2 "R"</strong><br>Podras hacer tus propias quinielas.
+		</span>
+		</a>
+	
+		<a href="#">
+		<span class="caja">
+			<span class="sidedate">4<br><span>Nuevo</span></span>
+			<strong>Foro Vallobas</strong><br>Foro del club, noticias, comentarios...
+		</span>
+		</a>
+	
+		<a href="http://picasaweb.google.es/pescardia">
+		<span class="caja">
+			<span class="sidedate">5<br><span>-</span></span>
+			<strong>Fotos Juan</strong><br>Aqui podras ver todas las fotos de los partidos.
+		</span>
+		</a>
+	
+		<a href="http://www.vallobas.com/index.php?page=entrevista">
+		<span class="caja last">
+			<span class="sidedate">6<br><span>-</span></span>
+			<strong>La gaceta de Gurdiel</strong><br>Realizacion de entrevistas a jugadores del club...
+		</span>
+		</a>
+	        <h3>Contador de Visitas</h3>
+	        <script language="JavaScript">
+	  var data = '&r=' + escape(document.referrer)
+		+ '&n=' + escape(navigator.userAgent)
+		+ '&p=' + escape(navigator.userAgent)
+		+ '&g=' + escape(document.location.href);
+
+	  if (navigator.userAgent.substring(0,1)>'3')
+	    data = data + '&sd=' + screen.colorDepth 
+		+ '&sw=' + escape(screen.width+'x'+screen.height);
+
+	  document.write('<a href="http://www.1freecounter.com/stats.php?i=54851" target=\"_blank\" >');
+	  document.write('<img alt="Free Counter" border=0 hspace=0 '+'vspace=0 src="http://www.1freecounter.com/counter.php?i=54851' + data + '">');
+	  document.write('</a>');
+	  </script><a href="http://www.1freecounter.com/stats.php?i=54851" target="_blank"><img alt="Free Counter" src="index.php_files/counter.png" border="0" vspace="0" hspace="0"></a>
+	</div>
+	<div class="boxbottom"></div>
+</div>
+	</div>
+	</div>
+	<div id="pie">
+			<div class="cuerpo">	
+		<div class="col">
+			<h2>About Me</h2>
+			<img src="index.php_files/MiaPerfil.jpg" style="border: 2px solid black;" alt="MiCara" width="64" height="48"><p>Ángel Suárez Fernández, diseñador y artífice de <a href="http://www.vallobas.com/index.php">Vallobas</a>,
+ desea agradecerles su paso por esta web; realizada desde de la 
+inexperiencia, espero de verdad, que les sea muy grata su paso por ella.</p>
+		</div>
+		<div class="col">
+			<h2>Nos puedes encontrar en:</h2>
+			<a href="http://www.facebook.com/pages/Club-Deportivo-Vallobin/45526240562" target="_blank"><img src="index.php_files/facebook.gif" alt="Facebook" border="0" width="53" height="54"></a>
+			<a href="" target="_blank"><img src="index.php_files/tuenti.jpg" alt="Tuenti" border="0" width="54" height="54"></a>
+		</div>
+		<div class="col last">
+			<h2>Usuarios Registrados</h2>
+				<p>
+				admin, PRDM13, angelin, angelin1, angelin, sadmin, miguel, chasco, 
+prueba, adry10, zlatan, lacera, Bertoregi, Mourelo, sanmarcar, lsegovia,
+ pablotomé, kristo, dinamita, lonsi, chema, juanqui, Johnny, andy 
+garcia, Rafa {Brasil}, yomismo, JUANGCASAS, fperez, cuco9, campiello1, 
+miguel sanchez, bulju, Diego Cuesta, chasky, andy garcia, NOELIA, 
+ROBERTO, Covadonga, zzzzzzzz, viero, Daniel, oriol, Guigui, nacho6, 
+carrozas, fonso7, rymypzc, la pixarra 2, pelusi, football, alejandro, 
+FSFA, ivan prieto labrador, vallobas4ever, drfrn, dfoot, davidgf, Berto 
+SPO 8, asturias92, ultras-vallobas, Gonzalo-5, mariosegura10, carlos 
+vallobin, samu SR7, mariapuertas, castroo, Andres07, gerar				</p>
+		</div>
+		<div id="footer">
+					<p>© Copyright 2008 http://www.vallobas.com All Rights Reserved.&nbsp;&nbsp;<a href="http://validator.w3.org/check?uri=" target="_blank">XHTML</a> / <a href="http://jigsaw.w3.org/css-validator/validator?uri=/css/style.css" target="_blank">CSS</a> &nbsp;&nbsp;&nbsp;&nbsp; <i>Fecha de creacion 11 de Julio de 2008</i>&nbsp;&nbsp;&nbsp;&nbsp;<i>Fecha de la última actualización: 28 de 11 de 2010 - 04:58</i></p>
+		</div>
+	</div>	</div>
+<div style="top: 269.5px; left: 582.5px;" class="pp_pic_holder facebook">       <div class="pp_top">        <div class="pp_left"></div>        <div class="pp_middle"></div>        <div class="pp_right"></div>       </div>       <div class="pp_content_container">        <div class="pp_left">        <div class="pp_right">         <div class="pp_content">          <div class="pp_loaderIcon"></div>          <div class="pp_fade">           <a href="#" class="pp_expand" title="Expand the image">Expand</a>           <div class="pp_hoverContainer">            <a class="pp_next" href="#">next</a>            <a class="pp_previous" href="#">previous</a>           </div>           <div id="pp_full_res"></div>           <div class="pp_details clearfix">            <a class="pp_close" href="#">Close</a>            <p class="pp_description"></p>            <div class="pp_nav">             <a href="#" class="pp_arrow_previous">Previous</a>             <p class="currentTextHolder">0/0</p>             <a href="#" class="pp_arrow_next">Next</a>            </div>           </div>          </div>         </div>        </div>        </div>       </div>       <div class="pp_bottom">        <div class="pp_left"></div>        <div class="pp_middle"></div>        <div class="pp_right"></div>       </div>      </div>      <div style="opacity: 0; height: 6007px;" class="pp_overlay"></div>      <div style="top: 269.5px; left: 602.5px;" class="ppt"></div></body></html>

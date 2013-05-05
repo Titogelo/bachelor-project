@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    #title:        symfony project
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     es
+    #robots:       index, follow
+
+  stylesheets:    [main.css,coolblue.css, enhancements.css, reset.css, screen.css, jquery-ui-1.8.11.custom.css, compara_equipos.css, jquery.fancybox-1.3.1.css]
+
+  javascripts:    [jquery-1.5.1.min.js, jquery.livequery.js, jquery-ui-1.8.11.custom.min.js, jquery.fancybox-1.3.1.js, jquery.mousewheel-3.0.2.pack.js, jquery.history.js, jquery.pwi.js, ui/jquery.ui.core.js, ui/jquery.ui.widget.js, ui/jquery.ui.mouse.js, ui/jquery.ui.draggable.js, ui/jquery.ui.droppable.js, ajax.js, comparar_jugadores.js, galeria_fotos.js,  highcharts.js, exporting.js, cargar_datos_graficos.js ]
+
+  has_layout:     true
+  layout:         layout

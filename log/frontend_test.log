@@ -1,0 +1,82 @@
+Jun 07 20:39:59 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 07 20:39:59 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 07 20:39:59 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'noticia',  'action' => 'index',)
+Jun 07 20:40:00 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 07 20:40:00 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 07 20:40:00 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /contenido/index with parameters array (  'module' => 'contenido',  'action' => 'index',)
+Jun 07 20:40:00 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 07 20:40:00 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 07 20:40:00 symfony [info] {contenidoActions} Call "contenidoActions->executeIndex()"
+Jun 07 20:40:01 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 07 20:40:01 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 07 20:40:01 symfony [info] {Doctrine_Connection_Mysql} query : SELECT t.idtemporada AS t__idtemporada, t.anio AS t__anio, t.nombre AS t__nombre, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM temporada t - ()
+Jun 07 20:40:01 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.nombre AS c__nombre, c.idtemporada AS c__idtemporada, c.idcategoria AS c__idcategoria, c.created_at AS c__created_at, c.updated_at AS c__updated_at FROM categoria c - ()
+Jun 07 20:40:01 symfony [info] {Doctrine_Connection_Mysql} query : SELECT j.idjornada AS j__idjornada, j.numjornada AS j__numjornada, j.fechajornada AS j__fechajornada, j.nombre AS j__nombre FROM jornada j - ()
+Jun 07 20:40:01 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/test/apps/frontend/modules/contenido/templates/indexSuccess.php"
+Jun 07 20:40:01 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/test/apps/frontend/templates/layout.php"
+Jun 07 20:40:01 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/test/apps/frontend/templates/layout.php"
+Jun 07 20:40:02 symfony [info] {main} Call "noticia->executeUsuario()"
+Jun 07 20:40:02 symfony [info] {Doctrine_Connection_Mysql} query : SELECT u.idusuario AS u__idusuario, u.idpersona AS u__idpersona FROM usuario u WHERE (idUsuario > 1) LIMIT 5 - ()
+Jun 07 20:40:02 symfony [info] {sfPartialView} Render "/Applications/MAMP/htdocs/test/apps/frontend/modules/noticia/templates/_usuario.php"
+Jun 07 20:40:02 symfony [info] {main} Call "noticia->executeUltimoscomentarios()"
+Jun 07 20:40:02 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.idcomentario AS c__idcomentario, c.idnoticia AS c__idnoticia, c.idusuario AS c__idusuario, c.cuerpo AS c__cuerpo, c.avatar AS c__avatar, c.created_at AS c__created_at, c.updated_at AS c__updated_at FROM comentario c ORDER BY idComentario desc LIMIT 5 - ()
+Jun 07 20:40:02 symfony [info] {sfPartialView} Render "/Applications/MAMP/htdocs/test/apps/frontend/modules/noticia/templates/_ultimoscomentarios.php"
+Jun 07 20:40:02 symfony [info] {sfWebResponse} Send content (9122 o)
+Jun 07 20:40:23 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 07 20:40:23 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 07 20:40:23 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'noticia',  'action' => 'index',)
+Jun 07 20:40:24 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 07 20:40:24 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 07 20:40:24 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /clasificacion/index with parameters array (  'module' => 'clasificacion',  'action' => 'index',)
+Jun 07 20:40:24 symfony [info] {sfFrontWebController} Action "clasificacion/index" does not exist
+Jun 07 20:40:24 symfony [err] {sfError404Exception} Action "clasificacion/index" does not exist.
+Jun 07 20:40:44 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 07 20:40:44 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 07 20:40:44 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'noticia',  'action' => 'index',)
+Jun 07 20:40:45 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 07 20:40:45 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 07 20:40:45 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /equipo/index with parameters array (  'module' => 'equipo',  'action' => 'index',)
+Jun 07 20:40:45 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 07 20:40:45 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 07 20:40:45 symfony [info] {sfBasicSecurityFilter} Action "equipo/index" requires authentication, forwarding to "sfGuardAuth/signin"
+Jun 07 20:40:45 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 07 20:40:45 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 07 20:40:45 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Jun 07 20:40:45 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/test/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Jun 07 20:40:45 symfony [info] {sfPartialView} Render "/Applications/MAMP/htdocs/test/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Jun 07 20:40:45 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/test/apps/frontend/templates/layout.php"
+Jun 07 20:40:45 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/test/apps/frontend/templates/layout.php"
+Jun 07 20:40:45 symfony [info] {main} Call "noticia->executeUsuario()"
+Jun 07 20:40:45 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 07 20:40:45 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 07 20:40:45 symfony [info] {Doctrine_Connection_Mysql} query : SELECT u.idusuario AS u__idusuario, u.idpersona AS u__idpersona FROM usuario u WHERE (idUsuario > 1) LIMIT 5 - ()
+Jun 07 20:40:45 symfony [info] {sfPartialView} Render "/Applications/MAMP/htdocs/test/apps/frontend/modules/noticia/templates/_usuario.php"
+Jun 07 20:40:45 symfony [info] {main} Call "noticia->executeUltimoscomentarios()"
+Jun 07 20:40:45 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.idcomentario AS c__idcomentario, c.idnoticia AS c__idnoticia, c.idusuario AS c__idusuario, c.cuerpo AS c__cuerpo, c.avatar AS c__avatar, c.created_at AS c__created_at, c.updated_at AS c__updated_at FROM comentario c ORDER BY idComentario desc LIMIT 5 - ()
+Jun 07 20:40:45 symfony [info] {sfPartialView} Render "/Applications/MAMP/htdocs/test/apps/frontend/modules/noticia/templates/_ultimoscomentarios.php"
+Jun 07 20:40:45 symfony [info] {sfWebResponse} Send content (9064 o)
+Jun 07 20:40:59 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 07 20:40:59 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 07 20:40:59 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'noticia',  'action' => 'index',)
+Jun 07 20:40:59 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 07 20:40:59 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 07 20:40:59 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /jugador/index with parameters array (  'module' => 'jugador',  'action' => 'index',)
+Jun 07 20:40:59 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 07 20:40:59 symfony [info] {sfFilterChain} Executing filter "sfBasicSecurityFilter"
+Jun 07 20:40:59 symfony [info] {sfBasicSecurityFilter} Action "jugador/index" requires authentication, forwarding to "sfGuardAuth/signin"
+Jun 07 20:40:59 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 07 20:40:59 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 07 20:40:59 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Jun 07 20:40:59 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/test/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/signinSuccess.php"
+Jun 07 20:40:59 symfony [info] {sfPartialView} Render "/Applications/MAMP/htdocs/test/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+Jun 07 20:40:59 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/test/apps/frontend/templates/layout.php"
+Jun 07 20:40:59 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/test/apps/frontend/templates/layout.php"
+Jun 07 20:40:59 symfony [info] {main} Call "noticia->executeUsuario()"
+Jun 07 20:40:59 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 07 20:40:59 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 07 20:40:59 symfony [info] {Doctrine_Connection_Mysql} query : SELECT u.idusuario AS u__idusuario, u.idpersona AS u__idpersona FROM usuario u WHERE (idUsuario > 1) LIMIT 5 - ()
+Jun 07 20:40:59 symfony [info] {sfPartialView} Render "/Applications/MAMP/htdocs/test/apps/frontend/modules/noticia/templates/_usuario.php"
+Jun 07 20:40:59 symfony [info] {main} Call "noticia->executeUltimoscomentarios()"
+Jun 07 20:40:59 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.idcomentario AS c__idcomentario, c.idnoticia AS c__idnoticia, c.idusuario AS c__idusuario, c.cuerpo AS c__cuerpo, c.avatar AS c__avatar, c.created_at AS c__created_at, c.updated_at AS c__updated_at FROM comentario c ORDER BY idComentario desc LIMIT 5 - ()
+Jun 07 20:40:59 symfony [info] {sfPartialView} Render "/Applications/MAMP/htdocs/test/apps/frontend/modules/noticia/templates/_ultimoscomentarios.php"
+Jun 07 20:40:59 symfony [info] {sfWebResponse} Send content (9064 o)

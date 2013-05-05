@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    #title:        symfony project
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:    [main.css,coolblue.css, enhancements.css, reset.css, screen.css, jquery-ui-1.8.5.custom.css]
+
+  javascripts:    [jquery-1.5.1.min.js, menu_desplegable.js, jquery.livequery.js,jquery-ui-1.8.5.custom.min.js,ajax.js ]
+
+  has_layout:     true
+  layout:         layout
